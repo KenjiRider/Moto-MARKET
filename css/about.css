@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(20, 20, 20, 0.9);
+  border-bottom: 1px solid #ff1e1e;
+}
+
+.logo {
+  font-size: 1.5em;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #ff1e1e;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  gap: 50px;
+}
+
+.content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.content h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.contact-info h2 {
+  color: #ffffff;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ff1e1e;
+  margin-bottom: 15px;
+}
+
+.contact-info a {
+  color: #ff1e1e;
+  text-decoration: none;
+}
+
+.image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #ff1e1e55;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(15, 15, 15, 0.95);
+  border-top: 1px solid #ff1e1e;
+  color: #aaa;
+}
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 0, 0, 0.25);
+
+  z-index: 999;
+  box-sizing: border-box;
+}
+.navbar .logo {
+  font-size: 1.5em;
+  color: #ffffff;
+  font-weight: 600;
+}
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: 0.3s;
+}
+.navbar nav a:hover, .navbar nav a.active {
+  color: #ff1e1e;
+}

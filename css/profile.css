@@ -1,0 +1,162 @@
+/* Общий фон */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #0B0B0B;
+  color: white;
+  padding-top: 100px;
+}
+
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.logo {
+  color: #FF2D2D;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  color: #FF2D2D;
+}
+
+/* ОСНОВА */
+.profile {
+  display: flex;
+  gap: 20px;
+  padding: 30px 5%;
+}
+
+/* КАРТОЧКИ */
+.card {
+  background: #111;
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #1f1f1f;
+}
+
+/* ЛЕВАЯ ЧАСТЬ */
+.profile-left {
+  width: 300px;
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #222;
+  margin: 0 auto 15px;
+}
+
+.profile-left h3 {
+  margin: 10px 0 5px;
+}
+
+.profile-left p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* КНОПКИ */
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #FF2D2D;
+  color: white;
+}
+
+.btn-secondary {
+  background: #1a1a1a;
+  color: #aaa;
+}
+
+/* ПРАВАЯ ЧАСТЬ */
+.profile-right {
+  flex: 1;
+}
+
+/* ТАБЫ */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #FF2D2D;
+  color: white;
+}
+
+/* ОБЪЯВЛЕНИЕ */
+.listing {
+  display: flex;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.listing img {
+  width: 150px;
+  object-fit: cover;
+}
+
+.listing-info {
+  padding: 15px;
+  flex: 1;
+}
+
+.listing-title {
+  font-weight: 600;
+}
+
+.listing-price {
+  color: #FF2D2D;
+  margin: 5px 0;
+}
+
+.actions button {
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit {
+  background: #FF2D2D;
+  color: white;
+}
+
+.delete {
+  background: #333;
+  color: #aaa;
+}

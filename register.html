@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация | MOTO Market</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<script src="js/navbar.js"></script>
+
+  <div class="container">
+    <h2 data-lang="title">Создать аккаунт</h2>
+
+    <form>
+      <input type="text" data-lang-placeholder="name" placeholder="Имя">
+      <input type="email" data-lang-placeholder="email" placeholder="Email">
+      <input type="text" data-lang-placeholder="phone" placeholder="Телефон">
+
+      <div class="password-wrapper">
+        <input type="password" data-lang-placeholder="password" placeholder="Пароль">
+        <span class="toggle-password">👁️</span>
+      </div>
+
+      <div class="password-wrapper">
+        <input type="password" data-lang-placeholder="confirm" placeholder="Повторите пароль">
+        <span class="toggle-password">👁️</span>
+      </div>
+
+      <button id="registerBtn" data-lang="registerBtn">
+        Зарегистрироваться
+      </button>
+    </form>
+
+    <p class="login-link">
+      <span data-lang="haveAccount">Уже есть аккаунт?</span>
+      <a href="login.html" data-lang="login">Войти</a>
+    </p>
+
+    <p id="errorMsg"></p>
+  </div>
+<script src="js/i18n.js"></script>
+</body>
+</html>

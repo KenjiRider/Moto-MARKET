@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Авторизация | MOTO Market</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<script src="js/navbar.js"></script>
+
+  <div class="login-container">
+    <h2 id="loginTitle">Войти в <span>MOTO | Market</span></h2>
+    <form id="loginForm">
+      <label id="emailLabel">Email</label>
+      <input type="email" id="emailInput" placeholder="Введите email" required>
+
+      <label id="passwordLabel">Пароль</label>
+      <input type="password" id="passwordInput" placeholder="Введите пароль" required>
+
+      <button type="submit" class="login-btn" id="loginBtn">Войти</button>
+    </form>
+
+    <p class="register-text" id="registerText">Нет аккаунта? <a href="register.html" id="registerLink">Зарегистрироваться</a></p>
+  </div>
+<script src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: url('../img/background_login2.0.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+}
+
+/* затемнение */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+/* мягкое красное свечение */
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(255,45,45,0.25), transparent);
+  filter: blur(120px);
+}
+
+/* NAV */
+.navbar {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.home-btn {
+  background: #FF2D2D;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.language-switch select {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* CARD */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 360px;
+  padding: 40px;
+  border-radius: 16px;
+
+  background: rgba(20,20,20,0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* TITLE */
+.container h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.container h2 span {
+  color: #FF2D2D;
+}
+
+/* INPUT */
+.container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  color: white;
+}
+
+.container input:focus {
+  border-color: #FF2D2D;
+  outline: none;
+}
+
+/* PASSWORD ICON */
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* BUTTON */
+#registerBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #FF2D2D;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#registerBtn:hover {
+  background: #ff4d4d;
+}
+
+/* LINKS */
+.login-link {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.login-link a {
+  color: #FF2D2D;
+  text-decoration: none;
+}
+
+/* ERROR */
+#errorMsg {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+}

@@ -1,0 +1,302 @@
+/* Общие настройки */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  background: url('../img/background_login2.0.png') no-repeat center center/cover;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Затемнение фона */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+/* Красное свечение (вместо синего) */
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(255, 45, 45, 0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
+}
+
+/* Навбар */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 0, 0, 0.25);
+
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+
+.logo a {
+  color: #ff2b2b;
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+
+  text-shadow:
+    0 0 10px rgba(255, 0, 0, 0.7),
+    0 0 20px rgba(255, 0, 0, 0.5);
+
+  transition: 0.3s;
+}
+
+.logo a:hover {
+  color: #ff4d4d;
+}
+
+/* LINKS */
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  position: relative;
+  transition: 0.3s;
+}
+
+/* underline animation */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #ff2b2b;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff2b2b;
+  text-shadow: 0 0 10px rgba(255,0,0,0.6);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* LANGUAGE */
+
+.nav-right select {
+  background: rgba(15,15,15,0.9);
+
+  border: 1px solid rgba(255,0,0,0.4);
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.nav-right select:hover {
+  border-color: #ff2b2b;
+
+  box-shadow:
+    0 0 10px rgba(255,0,0,0.5);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo a {
+    font-size: 24px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
+
+
+/* Язык */
+.lang-switch select {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.lang-switch select:hover {
+  border-color: #FF2D2D;
+  color: #FF2D2D;
+}
+
+/* Контейнер */
+.login-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  width: 350px;
+
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+}
+
+.auth-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-container:hover {
+  transform: translateY(-3px);
+}
+
+/* Заголовок */
+.login-container h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.login-container span {
+  color: #FF2D2D;
+}
+
+/* Форма */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-container label {
+  text-align: left;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* Инпуты */
+.login-container input {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #FF2D2D;
+  outline: none;
+}
+
+/* Кнопка */
+.login-btn {
+  background: #FF2D2D;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #ff4d4d;
+}
+
+/* Регистрация */
+.register-text {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.register-text a {
+  color: #FF2D2D;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптив */
+@media (max-width: 400px) {
+  .login-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
