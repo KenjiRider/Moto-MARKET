@@ -1,47 +1,291 @@
-<div class="profile">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/profile.css">
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль | Moto Market</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body data-page-title="page_profile_title">
+  <div id="navbar-container"></div>
 
-
-<div class="navbar">
-<div id="navbar-container"></div>
-
-<script src="js/navbar.js"></script>
-  <!-- ЛЕВАЯ -->
-  <div class="profile-left card">
-    <div class="avatar"></div>
-    <h3>Виталий Бакалейник</h3>
-    <p>vitaliy@email.com</p>
-    <p>+972...</p>
-
-    <button class="btn btn-primary">Редактировать</button>
-    <button class="btn btn-secondary">Добавить объявление</button>
-    <button class="btn btn-secondary">Настройки</button>
-  </div>
-
-  <!-- ПРАВАЯ -->
-  <div class="profile-right card">
-
-    <div class="tabs">
-      <div class="tab active">Мои объявления</div>
-      <div class="tab">Избранное</div>
-      <div class="tab">Сообщения</div>
-    </div>
-
-    <div class="listing">
-      <img src="img/thumb_1468043_dc_car_gallery_big.jpeg" alt="Yamaha R3 2025">
-
-      <div class="listing-info">
-        <div class="listing-title">Yamaha R3 2025</div>
-        <div class="listing-price">22,000 ILS</div>
-
-        <div class="actions">
-          <button class="edit">Редактировать</button>
-          <button class="delete">Удалить</button>
+  <main class="cabinet">
+    <aside class="cabinet-sidebar">
+      <section class="account-card">
+        <div class="account-card__top">
+          <div class="avatar" id="profileAvatar">VB</div>
+          <div>
+            <h2 id="profileDisplayName">Виталий Бакалейник</h2>
+            <p id="profileDisplayEmail">vitaliy@email.com</p>
+          </div>
         </div>
-      </div>
-    </div>
+        <div class="account-meta">
+          <span>ID 12261275</span>
+          <span data-i18n="profile_rating">75 рейтинг</span>
+        </div>
+        <button class="btn btn-primary" type="button" data-tab-target="edit" data-i18n="profile_edit">Редактировать</button>
+        <a class="btn btn-outline" href="#new-listing" data-i18n="profile_add_listing">Добавить объявление</a>
+      </section>
 
-  </div>
-</div>
-<script src="js/i18n.js"></script>
+      <nav class="cabinet-menu" aria-label="Cabinet navigation">
+        <button class="cabinet-menu__item active" type="button" data-tab-target="overview">
+          <span class="menu-icon">⌂</span>
+          <span data-i18n="cabinet_overview">Личный кабинет</span>
+        </button>
+        <button class="cabinet-menu__item" type="button" data-tab-target="listings">
+          <span class="menu-icon">☰</span>
+          <span data-i18n="profile_my_listings">Мои объявления</span>
+        </button>
+        <button class="cabinet-menu__item" type="button" data-tab-target="favorites">
+          <span class="menu-icon">♡</span>
+          <span data-i18n="profile_favorites">Избранное</span>
+          <span class="menu-badge" id="favoritesCount">0</span>
+        </button>
+        <button class="cabinet-menu__item" type="button" data-tab-target="messages">
+          <span class="menu-icon">✉</span>
+          <span data-i18n="profile_messages">Сообщения</span>
+          <span class="menu-badge">2</span>
+        </button>
+        <button class="cabinet-menu__item" type="button" data-tab-target="subscriptions">
+          <span class="menu-icon">↟</span>
+          <span data-i18n="cabinet_subscriptions">Продвижение</span>
+        </button>
+        <button class="cabinet-menu__item" type="button" data-tab-target="settings">
+          <span class="menu-icon">⚙</span>
+          <span data-i18n="profile_settings">Настройки</span>
+        </button>
+      </nav>
+    </aside>
+
+    <section class="cabinet-content">
+      <section class="cabinet-panel active" data-tab-panel="overview">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="cabinet_eyebrow">Moto Market</p>
+            <h1 data-i18n="cabinet_title">Личный кабинет</h1>
+          </div>
+          <a class="btn btn-primary compact" href="#new-listing" data-i18n="profile_add_listing">Добавить объявление</a>
+        </div>
+
+        <div class="notice warning">
+          <strong data-i18n="notice_phone_title">Укажите номер телефона</strong>
+          <p data-i18n="notice_phone_body">Без контактного номера вы не сможете публиковать объявления и получать сообщения от покупателей.</p>
+          <button class="btn btn-secondary compact" type="button" data-tab-target="edit" data-i18n="notice_phone_action">Добавить телефон</button>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span data-i18n="stat_active">Активные объявления</span>
+            <strong>1</strong>
+          </article>
+          <article class="stat-card">
+            <span data-i18n="stat_favorites">В избранном</span>
+            <strong id="favoritesStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span data-i18n="stat_messages">Новые сообщения</span>
+            <strong>2</strong>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="feature-card">
+            <h3 data-i18n="garage_title">Мой гараж</h3>
+            <p data-i18n="garage_body">Сохраняйте мотоциклы, документы, историю обслуживания и заметки для будущих объявлений.</p>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="business_title">Для бизнеса</h3>
+            <p data-i18n="business_body">Позже здесь появятся роли, витрина салона, статистика просмотров и платные пакеты продвижения.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="edit">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="profile_edit">Редактировать</p>
+            <h1 data-i18n="edit_profile_title">Данные профиля</h1>
+          </div>
+        </div>
+
+        <form class="profile-form" id="profileForm">
+          <label>
+            <span data-i18n="first_name">Имя</span>
+            <input id="firstName" type="text" placeholder="Виталий" data-i18n-placeholder="first_name">
+          </label>
+          <label>
+            <span data-i18n="last_name">Фамилия</span>
+            <input id="lastName" type="text" placeholder="Бакалейник" data-i18n-placeholder="last_name">
+          </label>
+          <label>
+            <span data-i18n="email">Email</span>
+            <input id="profileEmail" type="email" placeholder="vitaliy@email.com" data-i18n-placeholder="email">
+          </label>
+          <label>
+            <span data-i18n="primary_phone">Основной телефон</span>
+            <input id="primaryPhone" type="tel" placeholder="+972 52 745 9727" data-i18n-placeholder="primary_phone">
+          </label>
+          <label>
+            <span data-i18n="secondary_phone">Дополнительный телефон</span>
+            <input id="secondaryPhone" type="tel" placeholder="+972 ..." data-i18n-placeholder="secondary_phone">
+          </label>
+          <label>
+            <span data-i18n="city">Город</span>
+            <input id="city" type="text" placeholder="Bat Yam" data-i18n-placeholder="city">
+          </label>
+          <label>
+            <span data-i18n="birth_date">Дата рождения</span>
+            <input id="birthDate" type="date">
+          </label>
+          <label class="full">
+            <span data-i18n="profile_about_me">О себе</span>
+            <textarea id="aboutMe" rows="4" placeholder="Расскажите немного о себе" data-i18n-placeholder="profile_about_me"></textarea>
+          </label>
+          <button class="btn btn-primary form-action" type="submit" data-i18n="save_changes">Сохранить</button>
+          <p class="form-status" id="profileFormStatus"></p>
+        </form>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="listings">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="profile_my_listings">Мои объявления</p>
+            <h1 data-i18n="listing_management_title">Управление объявлениями</h1>
+          </div>
+        </div>
+
+        <article class="listing-row">
+          <img src="img/thumb_1468043_dc_car_gallery_big.jpeg" alt="Yamaha R3 2025">
+          <div>
+            <h3 data-i18n="profile_listing_title">Yamaha R3 2025</h3>
+            <p data-i18n="listing_status_draft">Черновик: добавьте телефон, фото и описание перед публикацией.</p>
+            <strong data-i18n="profile_listing_price">22,000 ILS</strong>
+          </div>
+          <div class="listing-actions">
+            <button class="btn btn-secondary compact" type="button" data-i18n="profile_edit">Редактировать</button>
+            <button class="btn btn-outline compact" type="button" data-i18n="promote_listing">Продвинуть</button>
+          </div>
+        </article>
+
+        <div class="new-listing" id="new-listing">
+          <h3 data-i18n="new_listing_title">Быстрое добавление объявления</h3>
+          <p data-i18n="new_listing_body">На следующем этапе добавим полноценную форму: марка, модель, год, пробег, цена, город, фото и описание.</p>
+        </div>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="favorites">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="profile_favorites">Избранное</p>
+            <h1 data-i18n="favorites_title">Понравившиеся объявления</h1>
+          </div>
+        </div>
+        <div class="favorites-list" id="favoritesList"></div>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="messages">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="profile_messages">Сообщения</p>
+            <h1 data-i18n="messages_title">Чаты с пользователями и администрацией</h1>
+          </div>
+        </div>
+
+        <div class="message-list">
+          <article class="message-card unread">
+            <div>
+              <h3 data-i18n="admin_chat_title">Администрация Moto Market</h3>
+              <p data-i18n="admin_chat_body">Пожалуйста, добавьте номер телефона, чтобы открыть публикацию объявлений.</p>
+            </div>
+            <span data-i18n="message_today">Сегодня</span>
+          </article>
+          <article class="message-card">
+            <div>
+              <h3 data-i18n="buyer_chat_title">Покупатель: Honda CBR500R</h3>
+              <p data-i18n="buyer_chat_body">Здравствуйте, мотоцикл еще актуален?</p>
+            </div>
+            <span data-i18n="message_yesterday">Вчера</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="subscriptions">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="cabinet_subscriptions">Продвижение</p>
+            <h1 data-i18n="subscriptions_title">Пакеты для большего охвата</h1>
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card">
+            <h3 data-i18n="plan_start_title">Start</h3>
+            <strong>₪49 / <span data-i18n="month">месяц</span></strong>
+            <p data-i18n="plan_start_body">Поднятие объявления в поиске на 3 дня и базовая статистика просмотров.</p>
+            <button class="btn btn-outline" type="button" data-i18n="choose_plan">Выбрать</button>
+          </article>
+          <article class="plan-card featured">
+            <h3 data-i18n="plan_pro_title">Pro</h3>
+            <strong>₪99 / <span data-i18n="month">месяц</span></strong>
+            <p data-i18n="plan_pro_body">Топ-размещение, выделение карточки и недельный буст для одного объявления.</p>
+            <button class="btn btn-primary" type="button" data-i18n="choose_plan">Выбрать</button>
+          </article>
+          <article class="plan-card">
+            <h3 data-i18n="plan_business_title">Business</h3>
+            <strong>₪249 / <span data-i18n="month">месяц</span></strong>
+            <p data-i18n="plan_business_body">Для салонов: несколько объявлений, витрина бизнеса и приоритетная поддержка.</p>
+            <button class="btn btn-outline" type="button" data-i18n="choose_plan">Выбрать</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="cabinet-panel" data-tab-panel="settings">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-i18n="profile_settings">Настройки</p>
+            <h1 data-i18n="settings_title">Приватность и уведомления</h1>
+          </div>
+        </div>
+
+        <form class="settings-list" id="settingsForm">
+          <label class="toggle-row">
+            <span>
+              <strong data-i18n="setting_show_phone">Показывать телефон в объявлениях</strong>
+              <small data-i18n="setting_show_phone_body">Покупатели смогут звонить напрямую.</small>
+            </span>
+            <input type="checkbox" id="showPhone" checked>
+          </label>
+          <label class="toggle-row">
+            <span>
+              <strong data-i18n="setting_messages">Получать сообщения от покупателей</strong>
+              <small data-i18n="setting_messages_body">Чаты будут доступны в кабинете.</small>
+            </span>
+            <input type="checkbox" id="allowMessages" checked>
+          </label>
+          <label class="toggle-row">
+            <span>
+              <strong data-i18n="setting_email">Email-уведомления</strong>
+              <small data-i18n="setting_email_body">Новости, ответы и статус объявлений.</small>
+            </span>
+            <input type="checkbox" id="emailNotifications" checked>
+          </label>
+          <label class="toggle-row">
+            <span>
+              <strong data-i18n="setting_business">Бизнес-аккаунт</strong>
+              <small data-i18n="setting_business_body">Подходит салонам, сервисам и дилерам.</small>
+            </span>
+            <input type="checkbox" id="businessAccount">
+          </label>
+          <button class="btn btn-primary form-action" type="submit" data-i18n="save_settings">Сохранить настройки</button>
+          <p class="form-status" id="settingsStatus"></p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

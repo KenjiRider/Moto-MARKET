@@ -1,39 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moto | Market</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="register/register.html">
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <span data-i18n="brand_left">Moto </span><span class="accent">  | MARKET</span>
-      </div>
-
-      <nav class="nav">
-        <a href="#" data-i18n="menu_catalog">Каталог</a>
-        <a href="#" data-i18n="menu_trending">Актуальное</a>
-        <a href="about.html" data-i18n="menu_about">О нас</a>
-      </nav>
-
-      <div class="user-actions">
-        <select id="langSwitcher" class="lang-switcher" aria-label="Language">
-          <option value="ru">RU</option>
-          <option value="en">EN</option>
-          <option value="ua">UA</option>
-          <option value="he">HE</option>
-        </select>
-
-        <a href="#" class="fav" data-i18n="fav"> Избранное</a>
-        <a href="login.html" class="login-btn" data-i18n="login">Войти</a>
-      </div>
-    </div>
-  </header>
+<body data-page-title="page_home_title">
+  <div id="navbar-container"></div>
 
   <!-- Hero -->
   <section class="hero">
@@ -45,11 +19,11 @@
 
         <form class="search" action="#">
           <div class="search-inputs">
-            <input type="text" data-i18n="search_brand" placeholder="Марка">
-            <input type="text" data-i18n="search_price" placeholder="Цена">
-            <input type="text" data-i18n="search_year" placeholder="Год">
+            <input type="text" data-i18n-placeholder="search_brand" placeholder="Марка">
+            <input type="text" data-i18n-placeholder="search_price" placeholder="Цена">
+            <input type="text" data-i18n-placeholder="search_year" placeholder="Год">
           </div>
-          <button type="submit" class="search-btn" aria-label="Искать">
+          <button type="submit" class="search-btn" aria-label="Искать" data-i18n-aria="search_label">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-1.06 1.06l.27.28v.79L20 21.5 
               21.5 20l-6-6zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
@@ -66,7 +40,7 @@
   </section>
 
   <!-- Categories Section -->
-  <section class="section">
+  <section class="section" id="catalog">
     <div class="container">
       <h2 data-i18n="categories_title">Популярные категории</h2>
 
@@ -92,12 +66,13 @@
   </section>
 
   <!-- Trending Section -->
-  <section class="section">
+  <section class="section" id="trending">
     <div class="container">
       <h2 data-i18n="offers_title">Актуальные предложения</h2>
 
       <div class="card-grid">
         <article class="card">
+          <button class="favorite-btn" type="button" aria-label="Add to favorites" data-id="honda-cbr500r-2019" data-title="Honda CBR500R" data-year="2019" data-price="₪35 000" data-image="img/honda.avif">♡</button>
           <img src="img/honda.avif" alt="Honda CBR500R">
           <div class="card-body">
             <div class="card-title" data-i18n="offer1_title">Honda CBR500R</div>
@@ -107,6 +82,7 @@
         </article>
 
         <article class="card">
+          <button class="favorite-btn" type="button" aria-label="Add to favorites" data-id="harley-sportster-2016" data-title="Harley-Davidson Sportster" data-year="2016" data-price="₪25 000" data-image="img/harley.png">♡</button>
           <img src="img/harley.png" alt="Harley-Davidson Sportster">
           <div class="card-body">
             <div class="card-title" data-i18n="offer2_title">Harley-Davidson Sportster</div>
@@ -116,6 +92,7 @@
         </article>
 
         <article class="card">
+          <button class="favorite-btn" type="button" aria-label="Add to favorites" data-id="bmw-r-ninet-2018" data-title="BMW R nineT" data-year="2018" data-price="₪29 000" data-image="img/chopper.avif">♡</button>
           <img src="img/chopper.avif" alt="BMW R nineT">
           <div class="card-body">
             <div class="card-title" data-i18n="offer3_title">BMW R nineT</div>
@@ -143,9 +120,9 @@
       <nav class="footer-nav">
         <h4 data-i18n="footer_nav">Навигация</h4>
         <ul>
-          <li><a href="#" data-i18n="menu_catalog">Каталог</a></li>
-          <li><a href="#" data-i18n="menu_trending">Актуальное</a></li>
-          <li><a href="#" data-i18n="menu_about">О нас</a></li>
+          <li><a href="index.html#catalog" data-i18n="menu_catalog">Каталог</a></li>
+          <li><a href="index.html#trending" data-i18n="menu_trending">Актуальное</a></li>
+          <li><a href="about.html" data-i18n="menu_about">О нас</a></li>
           <li><a href="#" data-i18n="menu_contacts">Контакты</a></li>
         </ul>
       </nav>
@@ -176,6 +153,8 @@
   </footer>
 
   <!-- Скрипты -->
+  <script src="js/navbar.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/listings.js"></script>
 </body>
 </html>

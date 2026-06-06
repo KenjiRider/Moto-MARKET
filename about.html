@@ -1,55 +1,43 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Про нас | Moto Market</title>
-  <link rel="stylesheet" href="style.css">
+  <title>О нас | Moto Market</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/about.css">
 </head>
-<body>
+<body data-page-title="page_about_title">
   <div id="navbar-container"></div>
-  <script>
-fetch("components/navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar-container").innerHTML = data;
-  });
-</script>
 
-  <section class="about-section">
+  <main class="about-section">
     <div class="content">
-      <h1 id="title">Про Moto Market</h1>
-      <p id="p1">
-        Moto Market — це сучасна платформа для купівлі та продажу мотоциклів в Ізраїлі.  
-        Ми створили місце, де можна знайти ідеальний байк — від спортивних моделей до туристичних.
+      <h1 data-i18n="about_title">Про Moto Market</h1>
+      <p data-i18n="about_p1">
+        Moto Market — це сучасна платформа для купівлі та продажу мотоциклів в Ізраїлі. Ми створили місце, де можна знайти ідеальний байк — від спортивних моделей до туристичних.
       </p>
-      <p id="p2">
-        Продавці можуть легко розміщувати свої оголошення, а покупці — швидко знаходити найкращі пропозиції.  
-        Наша мета — зробити ринок мотоциклів зручним, безпечним та прозорим.
+      <p data-i18n="about_p2">
+        Продавці можуть легко розміщувати свої оголошення, а покупці — швидко знаходити найкращі пропозиції. Наша мета — зробити ринок мотоциклів зручним, безпечним та прозорим.
       </p>
 
       <div class="contact-info">
-        <h2 id="contactsTitle">Контакти</h2>
+        <h2 data-i18n="contacts_title">Контакти</h2>
         <p>Email: <a href="mailto:support@motomarket.com">support@motomarket.com</a></p>
-        <p>Instagram: <a href="https://instagram.com/vetal_0372" target="_blank">@moto.market</a></p>
-        <p id="phone">Телефон: +972 52-745-9727</p>
+        <p>Instagram: <a href="https://instagram.com/vetal_0372" target="_blank" rel="noreferrer">@moto.market</a></p>
+        <p data-i18n="phone">Телефон: +972 52-745-9727</p>
       </div>
     </div>
 
     <div class="image-box">
-      <img src="img/ojo-toluwashe-cFDkPKdfviA-unsplash.jpg" alt="moto">
+      <img src="img/ojo-toluwashe-cFDkPKdfviA-unsplash.jpg" alt="Motorcycle">
     </div>
-  </section>
+  </main>
 
-  <footer>
-    <p id="footerText">© 2025 Moto Market | Усі права захищені</p>
+  <footer class="simple-footer">
+    <p data-i18n="about_footer">© 2026 Moto Market | Усі права захищені</p>
   </footer>
 
- <div id="navbar-container"></div>
-
-<script src="js/navbar.js"></script>
-<script src="js/i18n.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
-
 </html>

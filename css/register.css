@@ -63,7 +63,7 @@ body::after {
 }
 
 /* CARD */
-.container {
+.auth-card {
   position: relative;
   z-index: 2;
   width: 360px;
@@ -76,18 +76,18 @@ body::after {
 }
 
 /* TITLE */
-.container h2 {
+.auth-card h2 {
   color: #fff;
   margin-bottom: 25px;
   font-size: 24px;
 }
 
-.container h2 span {
+.auth-card h2 span {
   color: #FF2D2D;
 }
 
 /* INPUT */
-.container input {
+.auth-card input {
   width: 100%;
   padding: 12px;
   margin-bottom: 12px;
@@ -97,7 +97,7 @@ body::after {
   color: white;
 }
 
-.container input:focus {
+.auth-card input:focus {
   border-color: #FF2D2D;
   outline: none;
 }
@@ -113,6 +113,10 @@ body::after {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: #aaa;
+  font-size: 12px;
 }
 
 /* BUTTON */
@@ -153,7 +157,7 @@ body::after {
 
 /* MOBILE */
 @media (max-width: 400px) {
-  .container {
+  .auth-card {
     width: 90%;
     padding: 25px;
   }

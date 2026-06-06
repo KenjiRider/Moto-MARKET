@@ -1,40 +1,25 @@
-<nav class="navbar">
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-logo" href="index.html" aria-label="Moto Market">
+      <span data-i18n="brand_left">Moto</span><span class="accent"> | MARKET</span>
+    </a>
 
-    <div class="logo">
-        MOTO | MARKET
-    </div>
-    <ul class="nav-links">
-        <li>
-            <a href="index.html" data-lang="home">
-                Главная
-            </a>
-        </li>
-        <li>
-            <a href="listings.html" data-lang="listings">
-                Объявления
-            </a>
-        </li>
-        <li>
-            <a href="about.html" data-lang="about">
-                О нас
-            </a>
-        </li>
-        <li>
-            <a href="profile.html" data-lang="profile">
-                Профиль
-            </a>
-        </li>
-        <li>
-            <a href="login.html" data-lang="login">
-                Войти
-            </a>
-        </li>
-    </ul>
-    <select id="languageSwitcher">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" data-i18n="menu_home">Главная</a>
+      <a href="index.html#catalog" data-i18n="menu_catalog">Каталог</a>
+      <a href="index.html#trending" data-i18n="menu_trending">Актуальное</a>
+      <a href="about.html" data-i18n="menu_about">О нас</a>
+      <a href="profile.html" data-i18n="menu_profile">Профиль</a>
+    </nav>
 
+    <div class="site-actions">
+      <select id="langSwitcher" class="lang-switcher" aria-label="Language">
         <option value="ru">RU</option>
         <option value="en">EN</option>
         <option value="ua">UA</option>
         <option value="he">HE</option>
-    </select>
-</nav>
+      </select>
+      <a href="login.html" class="login-btn" data-i18n="login">Войти</a>
+    </div>
+  </div>
+</header>

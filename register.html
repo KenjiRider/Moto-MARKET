@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,42 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
-<div id="navbar-container"></div>
+<body data-page-title="page_register_title">
+  <div id="navbar-container"></div>
 
-<script src="js/navbar.js"></script>
+  <main class="container auth-card">
+    <h2 data-i18n="create_account">Создать аккаунт</h2>
 
-  <div class="container">
-    <h2 data-lang="title">Создать аккаунт</h2>
-
-    <form>
-      <input type="text" data-lang-placeholder="name" placeholder="Имя">
-      <input type="email" data-lang-placeholder="email" placeholder="Email">
-      <input type="text" data-lang-placeholder="phone" placeholder="Телефон">
+    <form id="registerForm">
+      <input type="text" id="username" data-i18n-placeholder="name" placeholder="Имя">
+      <input type="email" id="email" data-i18n-placeholder="email" placeholder="Email">
+      <input type="text" id="phone" data-i18n-placeholder="phone_placeholder" placeholder="Телефон">
 
       <div class="password-wrapper">
-        <input type="password" data-lang-placeholder="password" placeholder="Пароль">
-        <span class="toggle-password">👁️</span>
+        <input type="password" id="password" data-i18n-placeholder="password" placeholder="Пароль">
+        <button type="button" class="toggle-password" data-target="password" aria-label="Toggle password">👁</button>
       </div>
 
       <div class="password-wrapper">
-        <input type="password" data-lang-placeholder="confirm" placeholder="Повторите пароль">
-        <span class="toggle-password">👁️</span>
+        <input type="password" id="confirmPassword" data-i18n-placeholder="confirm_password" placeholder="Повторите пароль">
+        <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Toggle password">👁</button>
       </div>
 
-      <button id="registerBtn" data-lang="registerBtn">
+      <button id="registerBtn" type="submit" data-i18n="register">
         Зарегистрироваться
       </button>
     </form>
 
     <p class="login-link">
-      <span data-lang="haveAccount">Уже есть аккаунт?</span>
-      <a href="login.html" data-lang="login">Войти</a>
+      <span data-i18n="have_account">Уже есть аккаунт?</span>
+      <a href="login.html" data-i18n="login">Войти</a>
     </p>
 
     <p id="errorMsg"></p>
-  </div>
-<script src="js/i18n.js"></script>
+  </main>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>

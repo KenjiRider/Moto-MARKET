@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("navbar-container");
   if (!container) return;
 
-  const response = await fetch("components/navbar.html");
-  const html = await response.text();
-  container.innerHTML = html;
+  try {
+    const response = await fetch("components/navbar.html");
+    if (!response.ok) throw new Error("Navbar component was not found");
 
-  if (typeof setLanguage === 'function') {
-    setLanguage(localStorage.getItem('lang') || 'ru');
+    container.innerHTML = await response.text();
+    document.dispatchEvent(new CustomEvent("navbar:loaded"));
+  } catch (error) {
+    console.error("Failed to load navbar:", error);
   }
 });
